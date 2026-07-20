@@ -1,5 +1,17 @@
 # AI QA Platform
 
+Live demo product (agents, automation, frontend, backend).
+
+**Share this repo (live demo):** https://github.com/rajeshaiengineer-code/AI-QA-PLATFORM
+
+**Learning curriculum (separate repo):** https://github.com/rajeshaiengineer-code/qaautomation_academy
+
+> Keep these repositories separate: this one is for product demos; the academy is for learning and code reference.
+
+---
+
+# AI QA Platform
+
 An enterprise-grade AI-powered Quality Assurance Platform that automates the complete QA lifecycle.
 
 ---
