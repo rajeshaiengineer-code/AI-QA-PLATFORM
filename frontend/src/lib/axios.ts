@@ -1,11 +1,13 @@
 /**
  * Axios Configuration
+ *
+ * Default base URL is same-origin `/api/v1` (proxied by Next.js rewrites
+ * to BACKEND_URL). Override with NEXT_PUBLIC_API_URL when needed.
  */
 
 import axios from "axios";
 
-const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api/v1";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "/api/v1";
 
 export const apiClient = axios.create({
   baseURL: API_BASE_URL,
