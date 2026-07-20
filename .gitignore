@@ -138,4 +138,3 @@ credentials.json
 # Alembic
 # =====================
 alembic/versions/*.pyc
-.github/workflows/
