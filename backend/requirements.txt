@@ -1,0 +1,53 @@
+# ==============================================
+# AI QA Platform - Backend Dependencies
+# ==============================================
+
+# FastAPI Framework
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20
+
+# Pydantic for Data Validation
+pydantic==2.10.4
+pydantic-settings==2.7.1
+email-validator>=2.2.0,<3
+
+# Database - SQLAlchemy with Async
+sqlalchemy[asyncio]==2.0.36
+asyncpg==0.30.0
+psycopg[binary]==3.2.4
+greenlet==3.1.1
+
+# Database Migrations
+alembic==1.14.0
+
+# Security
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+bcrypt==4.0.1  # passlib 1.7.4 incompatible with bcrypt >= 4.1
+
+# HTTP Client
+httpx==0.28.1
+
+# Utilities
+python-dotenv==1.0.1
+
+# ==============================================
+# Development Dependencies
+# ==============================================
+
+# Testing
+pytest==8.3.4
+pytest-asyncio==0.25.2
+pytest-cov==6.0.0
+aiosqlite==0.20.0
+
+# Code Quality
+black==24.10.0
+isort==5.13.2
+flake8==7.1.1
+mypy==1.14.1
+
+# Type Stubs
+types-passlib==1.7.7.20240819
+types-python-jose==3.3.4.20240106

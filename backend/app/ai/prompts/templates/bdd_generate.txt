@@ -1,0 +1,51 @@
+Generate a Gherkin / Cucumber feature file from the approved test cases below.
+Return ONLY valid JSON (no markdown fences) matching this schema:
+
+{
+  "summary": "string",
+  "feature": {
+    "name": "string",
+    "description": "string or null",
+    "tags": ["@tag"],
+    "scenarios": [
+      {
+        "type": "scenario" | "scenario_outline",
+        "name": "string",
+        "tags": ["@tag"],
+        "steps": [
+          {"keyword": "Given" | "When" | "Then" | "And" | "But", "text": "string"}
+        ],
+        "examples": {
+          "name": "string or null",
+          "tags": ["@tag"],
+          "headers": ["col1", "col2"],
+          "rows": [["val1", "val2"]]
+        }
+      }
+    ]
+  }
+}
+
+Guidance:
+- Produce one Feature that covers the provided test cases.
+- Use Scenario for concrete cases; use Scenario Outline + Examples when the same steps vary by data.
+- examples is REQUIRED when type is scenario_outline; omit (or null) for scenario.
+- Tags must be Gherkin-style (start with @). Include category/priority tags when useful.
+- Steps must use Given/When/Then/And/But with clear, executable text.
+- Prefer 1–2 Scenario Outlines when several cases share a template; otherwise Scenario.
+- summary: one short paragraph describing BDD coverage.
+
+Story key: $external_id
+Title: $title
+Type: $story_type
+Priority: $priority
+Status: $status
+
+Description:
+$description
+
+Acceptance criteria:
+$acceptance_criteria
+
+Test cases to convert (JSON):
+$test_cases_json

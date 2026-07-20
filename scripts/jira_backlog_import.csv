@@ -1,0 +1,142 @@
+Summary,Issue Type,Description,Priority,Labels,Epic Name,Sprint
+AI Story Analysis,Epic,Epic: AI Story Analysis,High,,AI Story Analysis,
+AI Test Case Generation,Epic,Epic: AI Test Case Generation,High,,AI Test Case Generation,
+BDD Generation,Epic,Epic: BDD Generation,High,,BDD Generation,
+Execution & Reporting,Epic,Epic: Execution & Reporting,High,,Execution & Reporting,
+Execution Engine,Epic,Epic: Execution Engine,High,,Execution Engine,
+Jira Integration,Epic,Epic: Jira Integration,High,,Jira Integration,
+Platform Foundation,Epic,Epic: Platform Foundation,High,,Platform Foundation,
+Playwright Automation,Epic,Epic: Playwright Automation,High,,Playwright Automation,
+QA Approval Workflow,Epic,Epic: QA Approval Workflow,High,,QA Approval Workflow,
+Reporting,Epic,Epic: Reporting,High,,Reporting,
+Setup FastAPI backend,Story,"Backend foundation
+
+Acceptance Criteria:
+1. Health endpoint works",High,backend,Platform Foundation,Sprint 1
+Setup Next.js frontend,Story,"Frontend foundation
+
+Acceptance Criteria:
+1. Home page loads",High,frontend,Platform Foundation,Sprint 1
+Configure PostgreSQL,Story,"DB setup
+
+Acceptance Criteria:
+1. DB connected",High,database,Platform Foundation,Sprint 1
+Story CRUD,Story,"Manage stories
+
+Acceptance Criteria:
+1. CRUD works",High,story,Platform Foundation,Sprint 1
+Story Dashboard,Story,"Story UI
+
+Acceptance Criteria:
+1. Search & pagination",Medium,ui,Platform Foundation,Sprint 1
+Connect Jira Cloud,Story,"Connect to Jira
+
+Acceptance Criteria:
+1. Connection succeeds",High,jira,Jira Integration,Sprint 2
+Sync Stories,Story,"Import stories
+
+Acceptance Criteria:
+1. Stories imported",High,jira,Jira Integration,Sprint 2
+Analyze Story,Story,"AI analysis
+
+Acceptance Criteria:
+1. Complexity stored",High,ai,AI Story Analysis,Sprint 3
+Generate Test Cases,Story,"AI generation
+
+Acceptance Criteria:
+1. Test cases generated",High,ai,AI Test Case Generation,Sprint 4
+Approve Test Cases,Story,"Review workflow
+
+Acceptance Criteria:
+1. Approval stored",Medium,qa,QA Approval Workflow,Sprint 5
+Generate BDD,Story,"Generate feature file
+
+Acceptance Criteria:
+1. Feature created",High,bdd,BDD Generation,Sprint 6
+Generate Playwright,Story,"Automation
+
+Acceptance Criteria:
+1. Files generated",High,playwright,Playwright Automation,Sprint 7
+Execute Tests,Story,"Run suite
+
+Acceptance Criteria:
+1. Results stored",High,execution,Execution Engine,Sprint 8
+Execution Dashboard,Story,"Dashboard
+
+Acceptance Criteria:
+1. Metrics shown",Medium,report,Reporting,Sprint 9
+Connect Jira Cloud Account,Story,"As a QA Engineer, I want to connect my Jira Cloud instance using Site URL, Email, and API Token so that the platform can securely access projects and user stories.
+
+Acceptance Criteria:
+1. Enter valid Jira URL, email and API token.
+2. Validate credentials.
+3. Show Connected status.
+4. Show error for invalid credentials.
+5. Store credentials securely.",High,jira integration backend,Jira Integration,Sprint 1
+Synchronize Jira Projects,Story,"As a QA Engineer, I want to fetch all Jira projects after connecting so that I can choose which project to automate.
+
+Acceptance Criteria:
+1. List projects.
+2. Display project key and name.
+3. Refresh supported.
+4. Handle API errors.",High,jira project sync,Jira Integration,Sprint 1
+Import Sprint Backlog,Story,"As a QA Engineer, I want to import sprints from a selected project so that I can synchronize sprint stories.
+
+Acceptance Criteria:
+1. Select project.
+2. Display sprints.
+3. Import sprint metadata.
+4. Complete successfully.",High,jira sprint,Jira Integration,Sprint 1
+Import User Stories,Story,"As a QA Engineer, I want to import all user stories from a sprint so that they become available for AI analysis.
+
+Acceptance Criteria:
+1. Import stories.
+2. Avoid duplicates.
+3. Update changed stories.
+4. Show import summary.",High,jira story,Jira Integration,Sprint 2
+Analyze Imported Story,Story,"As a QA Engineer, I want AI to analyze an imported story so that I understand complexity, risks and automation feasibility.
+
+Acceptance Criteria:
+1. Analyze story.
+2. Calculate complexity.
+3. Calculate risk.
+4. Recommend test types.
+5. Save analysis.",High,ai analysis,AI Story Analysis,Sprint 2
+Generate Functional Test Cases,Story,"As a QA Engineer, I want AI to generate functional test cases from a story so that manual effort is reduced.
+
+Acceptance Criteria:
+1. Generate positive cases.
+2. Generate negative cases.
+3. Generate boundary cases.
+4. Avoid duplicates.
+5. Allow editing.",High,ai testcase,AI Test Case Generation,Sprint 3
+Review AI Generated Test Cases,Story,"As a QA Lead, I want to review and approve AI-generated test cases before automation begins.
+
+Acceptance Criteria:
+1. Review cases.
+2. Edit.
+3. Approve/Reject.
+4. Save comments.
+5. Only approved continue.",High,qa approval,QA Approval Workflow,Sprint 3
+Generate Gherkin Feature File,Story,"As a QA Automation Engineer, I want approved test cases converted into Gherkin feature files.
+
+Acceptance Criteria:
+1. Generate feature.
+2. Correct Given/When/Then.
+3. Use Scenario Outline where needed.
+4. Download feature file.",High,bdd gherkin,BDD Generation,Sprint 4
+Generate Playwright Automation,Story,"As a QA Automation Engineer, I want AI to generate Playwright automation scripts from approved BDD scenarios.
+
+Acceptance Criteria:
+1. Generate POM.
+2. Generate locators.
+3. Generate tests.
+4. Follow framework.",High,playwright automation,Playwright Automation,Sprint 4
+Execute Automation Suite and Generate Report,Story,"As a QA Engineer, I want to execute generated automation scripts and receive execution reports.
+
+Acceptance Criteria:
+1. Execute suite.
+2. Show pass/fail.
+3. Capture screenshots.
+4. Store report.
+5. AI failure analysis ready.",High,execution report,Execution & Reporting,Sprint 5

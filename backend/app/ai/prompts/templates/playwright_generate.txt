@@ -1,0 +1,47 @@
+Generate a Playwright TypeScript automation suite from the BDD features and/or
+test cases below. Return ONLY valid JSON (no markdown fences) matching this schema:
+
+{
+  "summary": "string",
+  "suite": {
+    "name": "string (kebab-case package / suite id)",
+    "description": "string or null",
+    "language": "typescript",
+    "framework": "playwright",
+    "page_objects": [{"path": "pages/FooPage.ts", "content": "...", "description": "optional"}],
+    "locators": [{"path": "locators/foo.ts", "content": "..."}],
+    "fixtures": [{"path": "fixtures/index.ts", "content": "..."}],
+    "utilities": [{"path": "utils/helpers.ts", "content": "..."}],
+    "assertions": [{"path": "assertions/custom.ts", "content": "..."}],
+    "hooks": [{"path": "hooks/globalSetup.ts", "content": "..."}],
+    "specs": [{"path": "tests/foo.spec.ts", "content": "..."}]
+  }
+}
+
+Guidance:
+- Target Playwright Test (@playwright/test) with TypeScript.
+- Prefer Page Object Model: locators centralized, page classes for interactions, specs for flows.
+- Include at least one page_object and one spec when possible.
+- Use role/label/test-id selectors; avoid brittle CSS when practical.
+- File paths must be relative (no leading slash). Content must be complete, runnable TS.
+- When BDD Gherkin is provided, map Scenario / Outline steps to specs and page methods.
+- When only test cases are provided, derive flows from steps + expected_result.
+- summary: one short paragraph describing coverage.
+
+Story key: $external_id
+Title: $title
+Type: $story_type
+Priority: $priority
+Status: $status
+
+Description:
+$description
+
+Acceptance criteria:
+$acceptance_criteria
+
+BDD features (JSON, may be empty):
+$bdd_features_json
+
+Test cases (JSON, may be empty):
+$test_cases_json

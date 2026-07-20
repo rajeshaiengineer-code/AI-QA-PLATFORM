@@ -1,0 +1,40 @@
+Analyze this failed test execution for root cause and a suggested fix.
+Return ONLY valid JSON (no markdown fences) matching this schema:
+
+{
+  "category": "product_bug" | "test_bug" | "flaky" | "environment" | "timeout" | "unknown",
+  "is_flaky": true | false,
+  "is_product_bug": true | false,
+  "summary": "string",
+  "root_cause": "string",
+  "suggested_fix": "string",
+  "confidence": 0.0 to 1.0,
+  "notes": "string or null"
+}
+
+Guidance:
+- category: primary classification of the failure
+- is_flaky: true if the failure looks intermittent / timing / race related
+- is_product_bug: true if the application under test is likely at fault
+- summary: one short paragraph describing what failed and why
+- root_cause: concise technical root cause
+- suggested_fix: concrete next step for developers or QA (code, test, or env)
+- confidence: how sure you are (0–1)
+- notes: ambiguities or missing evidence
+
+Execution id: $execution_id
+Status: $status
+Test case title: $test_case_title
+Test case steps: $test_case_steps
+Expected result: $expected_result
+Error message: $error_message
+Stack trace: $stack_trace
+Evidence URL: $evidence_url
+Retry count: $retry_count
+
+Optional evidence (paths/URLs; may be stubs):
+Logs: $logs
+Screenshot: $screenshot_url
+Video: $video_url
+Network: $network_url
+Trace: $trace_url

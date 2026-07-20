@@ -1,0 +1,36 @@
+Analyze the following user story for QA planning. Return ONLY valid JSON
+(no markdown fences) matching this schema:
+
+{
+  "complexity": "low" | "medium" | "high",
+  "risk": "low" | "medium" | "high" | "critical",
+  "automation_candidate": true | false,
+  "dependencies": ["string"],
+  "suggested_tests": [
+    {"title": "string", "type": "functional|edge|negative|regression|other", "rationale": "string"}
+  ],
+  "summary": "string",
+  "notes": "string or null"
+}
+
+Guidance:
+- complexity: effort to implement and thoroughly test
+- risk: likelihood/impact of defects escaping to production
+- automation_candidate: true if the story is a good fit for UI/API automation
+- dependencies: systems, teams, or stories this work likely depends on
+- suggested_tests: 3–8 concise test ideas (titles only need enough detail for a tester)
+- summary: one short paragraph of intent and test focus
+- notes: ambiguities, gaps in acceptance criteria, or clarifying questions
+
+Story key: $external_id
+Title: $title
+Type: $story_type
+Priority: $priority
+Status: $status
+Story points: $story_points
+
+Description:
+$description
+
+Acceptance criteria:
+$acceptance_criteria

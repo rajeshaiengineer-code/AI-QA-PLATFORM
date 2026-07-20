@@ -1,0 +1,45 @@
+Generate comprehensive QA test cases for the following user story.
+Return ONLY valid JSON (no markdown fences) matching this schema:
+
+{
+  "summary": "string",
+  "test_cases": [
+    {
+      "title": "string",
+      "description": "string or null",
+      "preconditions": "string or null",
+      "steps": [{"action": "string", "expected": "string or null"}],
+      "expected_result": "string or null",
+      "priority": "critical" | "high" | "medium" | "low",
+      "category": "positive" | "negative" | "boundary" | "api" | "security" | "database" | "accessibility" | "performance",
+      "tags": ["string"],
+      "is_automated": true | false,
+      "acceptance_criteria_index": number or null
+    }
+  ]
+}
+
+Guidance:
+- Cover every requested category at least once when the story supports it.
+- Categories to generate: $categories
+- steps: 2–6 concrete actions with expected outcomes where useful
+- acceptance_criteria_index: 1-based index into the acceptance criteria list below, or null
+- Prefer actionable titles a tester can execute without further clarification
+- Include negative, boundary, security, and accessibility cases when relevant
+- summary: one short paragraph describing coverage focus
+
+Story key: $external_id
+Title: $title
+Type: $story_type
+Priority: $priority
+Status: $status
+Story points: $story_points
+
+Description:
+$description
+
+Acceptance criteria:
+$acceptance_criteria
+
+Latest analysis (if any):
+$analysis_context

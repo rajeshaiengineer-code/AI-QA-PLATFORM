@@ -1,0 +1,273 @@
+[
+  {
+    "epic": "Platform Foundation",
+    "sprint": "Sprint 1",
+    "summary": "Setup FastAPI backend",
+    "description": "Backend foundation",
+    "priority": "High",
+    "labels": ["backend"],
+    "acceptance_criteria": ["Health endpoint works"]
+  },
+  {
+    "epic": "Platform Foundation",
+    "sprint": "Sprint 1",
+    "summary": "Setup Next.js frontend",
+    "description": "Frontend foundation",
+    "priority": "High",
+    "labels": ["frontend"],
+    "acceptance_criteria": ["Home page loads"]
+  },
+  {
+    "epic": "Platform Foundation",
+    "sprint": "Sprint 1",
+    "summary": "Configure PostgreSQL",
+    "description": "DB setup",
+    "priority": "High",
+    "labels": ["database"],
+    "acceptance_criteria": ["DB connected"]
+  },
+  {
+    "epic": "Platform Foundation",
+    "sprint": "Sprint 1",
+    "summary": "Story CRUD",
+    "description": "Manage stories",
+    "priority": "High",
+    "labels": ["story"],
+    "acceptance_criteria": ["CRUD works"]
+  },
+  {
+    "epic": "Platform Foundation",
+    "sprint": "Sprint 1",
+    "summary": "Story Dashboard",
+    "description": "Story UI",
+    "priority": "Medium",
+    "labels": ["ui"],
+    "acceptance_criteria": ["Search & pagination"]
+  },
+  {
+    "epic": "Jira Integration",
+    "sprint": "Sprint 2",
+    "summary": "Connect Jira Cloud",
+    "description": "Connect to Jira",
+    "priority": "High",
+    "labels": ["jira"],
+    "acceptance_criteria": ["Connection succeeds"]
+  },
+  {
+    "epic": "Jira Integration",
+    "sprint": "Sprint 2",
+    "summary": "Sync Stories",
+    "description": "Import stories",
+    "priority": "High",
+    "labels": ["jira"],
+    "acceptance_criteria": ["Stories imported"]
+  },
+  {
+    "epic": "AI Story Analysis",
+    "sprint": "Sprint 3",
+    "summary": "Analyze Story",
+    "description": "AI analysis",
+    "priority": "High",
+    "labels": ["ai"],
+    "acceptance_criteria": ["Complexity stored"]
+  },
+  {
+    "epic": "AI Test Case Generation",
+    "sprint": "Sprint 4",
+    "summary": "Generate Test Cases",
+    "description": "AI generation",
+    "priority": "High",
+    "labels": ["ai"],
+    "acceptance_criteria": ["Test cases generated"]
+  },
+  {
+    "epic": "QA Approval Workflow",
+    "sprint": "Sprint 5",
+    "summary": "Approve Test Cases",
+    "description": "Review workflow",
+    "priority": "Medium",
+    "labels": ["qa"],
+    "acceptance_criteria": ["Approval stored"]
+  },
+  {
+    "epic": "BDD Generation",
+    "sprint": "Sprint 6",
+    "summary": "Generate BDD",
+    "description": "Generate feature file",
+    "priority": "High",
+    "labels": ["bdd"],
+    "acceptance_criteria": ["Feature created"]
+  },
+  {
+    "epic": "Playwright Automation",
+    "sprint": "Sprint 7",
+    "summary": "Generate Playwright",
+    "description": "Automation",
+    "priority": "High",
+    "labels": ["playwright"],
+    "acceptance_criteria": ["Files generated"]
+  },
+  {
+    "epic": "Execution Engine",
+    "sprint": "Sprint 8",
+    "summary": "Execute Tests",
+    "description": "Run suite",
+    "priority": "High",
+    "labels": ["execution"],
+    "acceptance_criteria": ["Results stored"]
+  },
+  {
+    "epic": "Reporting",
+    "sprint": "Sprint 9",
+    "summary": "Execution Dashboard",
+    "description": "Dashboard",
+    "priority": "Medium",
+    "labels": ["report"],
+    "acceptance_criteria": ["Metrics shown"]
+  },
+  {
+    "epic": "Jira Integration",
+    "sprint": "Sprint 1",
+    "summary": "Connect Jira Cloud Account",
+    "description": "As a QA Engineer, I want to connect my Jira Cloud instance using Site URL, Email, and API Token so that the platform can securely access projects and user stories.",
+    "priority": "High",
+    "labels": ["jira", "integration", "backend"],
+    "acceptance_criteria": [
+      "Enter valid Jira URL, email and API token.",
+      "Validate credentials.",
+      "Show Connected status.",
+      "Show error for invalid credentials.",
+      "Store credentials securely."
+    ]
+  },
+  {
+    "epic": "Jira Integration",
+    "sprint": "Sprint 1",
+    "summary": "Synchronize Jira Projects",
+    "description": "As a QA Engineer, I want to fetch all Jira projects after connecting so that I can choose which project to automate.",
+    "priority": "High",
+    "labels": ["jira", "project", "sync"],
+    "acceptance_criteria": [
+      "List projects.",
+      "Display project key and name.",
+      "Refresh supported.",
+      "Handle API errors."
+    ]
+  },
+  {
+    "epic": "Jira Integration",
+    "sprint": "Sprint 1",
+    "summary": "Import Sprint Backlog",
+    "description": "As a QA Engineer, I want to import sprints from a selected project so that I can synchronize sprint stories.",
+    "priority": "High",
+    "labels": ["jira", "sprint"],
+    "acceptance_criteria": [
+      "Select project.",
+      "Display sprints.",
+      "Import sprint metadata.",
+      "Complete successfully."
+    ]
+  },
+  {
+    "epic": "Jira Integration",
+    "sprint": "Sprint 2",
+    "summary": "Import User Stories",
+    "description": "As a QA Engineer, I want to import all user stories from a sprint so that they become available for AI analysis.",
+    "priority": "High",
+    "labels": ["jira", "story"],
+    "acceptance_criteria": [
+      "Import stories.",
+      "Avoid duplicates.",
+      "Update changed stories.",
+      "Show import summary."
+    ]
+  },
+  {
+    "epic": "AI Story Analysis",
+    "sprint": "Sprint 2",
+    "summary": "Analyze Imported Story",
+    "description": "As a QA Engineer, I want AI to analyze an imported story so that I understand complexity, risks and automation feasibility.",
+    "priority": "High",
+    "labels": ["ai", "analysis"],
+    "acceptance_criteria": [
+      "Analyze story.",
+      "Calculate complexity.",
+      "Calculate risk.",
+      "Recommend test types.",
+      "Save analysis."
+    ]
+  },
+  {
+    "epic": "AI Test Case Generation",
+    "sprint": "Sprint 3",
+    "summary": "Generate Functional Test Cases",
+    "description": "As a QA Engineer, I want AI to generate functional test cases from a story so that manual effort is reduced.",
+    "priority": "High",
+    "labels": ["ai", "testcase"],
+    "acceptance_criteria": [
+      "Generate positive cases.",
+      "Generate negative cases.",
+      "Generate boundary cases.",
+      "Avoid duplicates.",
+      "Allow editing."
+    ]
+  },
+  {
+    "epic": "QA Approval Workflow",
+    "sprint": "Sprint 3",
+    "summary": "Review AI Generated Test Cases",
+    "description": "As a QA Lead, I want to review and approve AI-generated test cases before automation begins.",
+    "priority": "High",
+    "labels": ["qa", "approval"],
+    "acceptance_criteria": [
+      "Review cases.",
+      "Edit.",
+      "Approve/Reject.",
+      "Save comments.",
+      "Only approved continue."
+    ]
+  },
+  {
+    "epic": "BDD Generation",
+    "sprint": "Sprint 4",
+    "summary": "Generate Gherkin Feature File",
+    "description": "As a QA Automation Engineer, I want approved test cases converted into Gherkin feature files.",
+    "priority": "High",
+    "labels": ["bdd", "gherkin"],
+    "acceptance_criteria": [
+      "Generate feature.",
+      "Correct Given/When/Then.",
+      "Use Scenario Outline where needed.",
+      "Download feature file."
+    ]
+  },
+  {
+    "epic": "Playwright Automation",
+    "sprint": "Sprint 4",
+    "summary": "Generate Playwright Automation",
+    "description": "As a QA Automation Engineer, I want AI to generate Playwright automation scripts from approved BDD scenarios.",
+    "priority": "High",
+    "labels": ["playwright", "automation"],
+    "acceptance_criteria": [
+      "Generate POM.",
+      "Generate locators.",
+      "Generate tests.",
+      "Follow framework."
+    ]
+  },
+  {
+    "epic": "Execution & Reporting",
+    "sprint": "Sprint 5",
+    "summary": "Execute Automation Suite and Generate Report",
+    "description": "As a QA Engineer, I want to execute generated automation scripts and receive execution reports.",
+    "priority": "High",
+    "labels": ["execution", "report"],
+    "acceptance_criteria": [
+      "Execute suite.",
+      "Show pass/fail.",
+      "Capture screenshots.",
+      "Store report.",
+      "AI failure analysis ready."
+    ]
+  }
+]
