@@ -41,11 +41,14 @@ services:
     runtime: node
     plan: free
     rootDir: frontend
-    buildCommand: npm ci && npm run build
+    # --include=dev so Tailwind/PostCSS are present even if NODE_ENV=production
+    buildCommand: npm ci --include=dev && npm run build
     startCommand: npm run start -- -H 0.0.0.0 -p $PORT
     envVars:
       - key: NODE_ENV
         value: production
+      - key: NPM_CONFIG_PRODUCTION
+        value: "false"
       - key: NEXT_PUBLIC_API_URL
         sync: false
         # Set to https://<aiqa-api-host>/api/v1 after API is live
