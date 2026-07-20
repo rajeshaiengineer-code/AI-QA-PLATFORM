@@ -162,3 +162,22 @@ Alert on readiness 503 rate, API 5xx, and Postgres disk/connection saturation.
 | Compose backend unhealthy | Postgres up? `curl localhost:8000/api/v1/health/ready` |
 | CORS errors | `CORS_ORIGINS` includes the exact frontend origin |
 | Auth 401s | `AUTH_ENABLED` and valid Bearer token |
+| Frontend calls localhost | `NEXT_PUBLIC_API_URL` must be the public API `/api/v1` URL, then rebuild frontend |
+
+---
+
+## 10. Public deploy (Render) — shareable URL
+
+Requires a free [Render](https://render.com) account. Login cannot be completed from this agent without your credentials.
+
+### Steps
+
+1. Push latest `main` (includes [`render.yaml`](../render.yaml))
+2. Open https://dashboard.render.com/select-repo?type=blueprint
+3. Connect GitHub → select **AI-QA-PLATFORM** → Apply Blueprint
+4. After **aiqa-api** is live, copy its URL
+5. Set **aiqa-web** env `NEXT_PUBLIC_API_URL` = `https://<aiqa-api-host>/api/v1`
+6. Set **aiqa-api** env `CORS_ORIGINS` = `https://<aiqa-web-host>`
+7. Redeploy both → share the **frontend** URL on LinkedIn
+
+> Free web services may sleep when idle; first request can take 30–60s.

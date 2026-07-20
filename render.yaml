@@ -1,0 +1,53 @@
+# Render Blueprint — one-click public deploy
+# https://render.com/docs/blueprint-spec
+#
+# After first deploy, set frontend NEXT_PUBLIC_API_URL to the backend's
+# public URL (https://aiqa-api.onrender.com/api/v1) and redeploy frontend.
+
+databases:
+  - name: aiqa-db
+    plan: free
+
+services:
+  - type: web
+    name: aiqa-api
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: DEBUG
+        value: "false"
+      - key: LOG_FORMAT
+        value: json
+      - key: AUTH_ENABLED
+        value: "false"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: aiqa-db
+          property: connectionString
+      - key: CORS_ORIGINS
+        sync: false
+        # Set after frontend URL exists, e.g. https://aiqa-web.onrender.com
+
+  - type: web
+    name: aiqa-web
+    runtime: node
+    plan: free
+    rootDir: frontend
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start -- -H 0.0.0.0 -p $PORT
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_PUBLIC_API_URL
+        sync: false
+        # Set to https://<aiqa-api-host>/api/v1 after API is live
+      - key: NEXT_PUBLIC_DEFAULT_ORGANIZATION_ID
+        value: aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa

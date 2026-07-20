@@ -106,6 +106,19 @@ class Settings(BaseSettings):
     NOTIFICATIONS_DEFAULT_RECIPIENT: Optional[str] = None
     NOTIFICATIONS_DEFAULT_CHANNEL: str = "email"
 
+    @field_validator("DATABASE_URL", mode="before")
+    @classmethod
+    def normalize_database_url(cls, v: object) -> object:
+        """Accept standard postgres URLs from Render/Neon/Railway."""
+        if not isinstance(v, str) or not v:
+            return v
+        url = v.strip()
+        if url.startswith("postgres://"):
+            url = "postgresql://" + url[len("postgres://") :]
+        if url.startswith("postgresql://") and "+asyncpg" not in url:
+            url = "postgresql+asyncpg://" + url[len("postgresql://") :]
+        return url
+
     @field_validator("CORS_ORIGINS", mode="before")
     @classmethod
     def parse_cors_origins(cls, v):
@@ -131,7 +144,12 @@ class Settings(BaseSettings):
     @property
     def database_url_sync(self) -> str:
         """Return sync database URL for Alembic (using psycopg3)."""
-        return self.DATABASE_URL.replace("+asyncpg", "+psycopg")
+        url = self.DATABASE_URL
+        if "+asyncpg" in url:
+            return url.replace("+asyncpg", "+psycopg")
+        if url.startswith("postgresql://"):
+            return url.replace("postgresql://", "postgresql+psycopg://", 1)
+        return url
 
     @property
     def is_development(self) -> bool:
